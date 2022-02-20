@@ -25,8 +25,8 @@ function AppStack() {
 				},
 			}}>
 			<Drawer.Screen name="Home" component={Home} />
-			<Drawer.Screen name="Perfil" component={Profile} />
-			<Drawer.Screen name="Registrar-gastos" component={RegisterSpending} />
+			<Drawer.Screen name="Meus dados" component={Profile} />
+			<Drawer.Screen name="Meus gastos" component={RegisterSpending} />
 		</Drawer.Navigator>
 	)
 }

@@ -30,7 +30,7 @@ export default function Profile() {
 
 			<ButtonContainer>
 				<ButtonRegisterSpending
-					onPress={() => navigation.navigate('Registrar-gastos')}>
+					onPress={() => navigation.navigate('Meus gastos')}>
 					<TextRegisterSpending>Registrar gastos</TextRegisterSpending>
 				</ButtonRegisterSpending>
 			</ButtonContainer>

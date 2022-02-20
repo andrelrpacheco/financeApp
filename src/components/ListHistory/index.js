@@ -10,7 +10,7 @@ export default function ListHistory({ data }) {
 					<IconFeather
 						name={data.tipo === 'receita' ? 'arrow-up' : 'arrow-down'}
 						color="#ffffff"
-						size={22}
+						size={18}
 					/>
 					<TypeText>{data.tipo}</TypeText>
 				</IconView>

@@ -11,7 +11,7 @@ export default function PickerComponent({ onChange, type }) {
 				}}
 				selectedValue={type}
 				onValueChange={itemValue => onChange(itemValue)}>
-				<Picker.Item label="Selecione o tipo" value="" />
+				<Picker.Item label="Selecione o tipo" value={null} />
 				<Picker.Item label="Receita" value="receita" />
 				<Picker.Item label="Despesa" value="despesa" />
 			</Picker>
