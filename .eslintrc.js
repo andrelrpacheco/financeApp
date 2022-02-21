@@ -18,7 +18,6 @@ module.exports = {
 			'warn',
 			{
 				extensions: ['.js', '.jsx', '.ts', '.tsx'],
-				moduleDirectory: ['node_modules', 'src/'],
 			},
 		],
 		'import/prefer-default-export': 'off',

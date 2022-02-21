@@ -31,7 +31,7 @@ export const ButtonRegisterSpending = styled.TouchableOpacity`
 
 export const TextRegisterSpending = styled.Text`
 	font-size: 16px;
-	font-family: 'Roboto-Medium';
+	font-family: 'OpenSans-Bold';
 	color: #ffffff;
 	text-transform: uppercase;
 `
@@ -42,6 +42,6 @@ export const ButtonLogout = styled.TouchableOpacity`
 
 export const TextLogout = styled.Text`
 	font-size: 18px;
-	font-family: 'Roboto-Bold';
+	font-family: 'OpenSans-Bold';
 	color: #ff0000;
 `

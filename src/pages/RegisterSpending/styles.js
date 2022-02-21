@@ -28,6 +28,6 @@ export const SubmitButton = styled.TouchableOpacity`
 export const SubmitText = styled.Text`
 	color: #f5f5f5;
 	font-size: 18px;
-	font-family: 'Roboto-Medium';
+	font-family: 'OpenSans-Bold';
 	text-transform: uppercase;
 `

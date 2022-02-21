@@ -24,11 +24,11 @@ export const IconView = styled.View`
 export const TypeText = styled.Text`
 	color: #fff;
 	font-size: 16px;
-	font-family: 'Roboto-Medium';
+	font-family: 'OpenSans-Medium';
 `
 
 export const ValueText = styled.Text`
 	color: #222;
 	font-size: 22px;
-	font-family: 'Roboto-Bold';
+	font-family: 'OpenSans-Bold';
 `

@@ -6,17 +6,17 @@ export default function ListHistory({ data }) {
 	return (
 		<Container>
 			<Type>
-				<IconView type={data.tipo}>
+				<IconView type={data.typeItem}>
 					<IconFeather
 						name={data.tipo === 'receita' ? 'arrow-up' : 'arrow-down'}
 						color="#ffffff"
 						size={18}
 					/>
-					<TypeText>{data.tipo}</TypeText>
+					<TypeText>{data.typeItem}</TypeText>
 				</IconView>
 			</Type>
 
-			<ValueText>R$ {data.valor}</ValueText>
+			<ValueText>R$ {parseFloat(data.valueItem).toFixed(2)}</ValueText>
 		</Container>
 	)
 }

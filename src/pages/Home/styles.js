@@ -12,18 +12,19 @@ export const Container = styled.View`
 export const UserName = styled.Text`
 	font-size: 20px;
 	color: #000000;
-	font-family: 'Roboto-Medium';
+	font-family: 'OpenSans-Bold';
 `
 
 export const Balance = styled.Text`
-	margin: 5px 0 20px 0;
-	font-size: 26px;
-	font-family: 'Roboto-Bold';
+	margin: 20px 0 20px 0;
+	font-size: 20px;
+	font-family: 'OpenSans-Medium';
+	color: #000000;
 `
 
 export const Title = styled.Text`
 	font-size: 16px;
-	font-family: 'Roboto-Medium';
+	font-family: 'OpenSans-Bold';
 	margin: 0 0 8px 15px;
 	color: #3b9054;
 `

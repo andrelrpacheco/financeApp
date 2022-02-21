@@ -43,7 +43,7 @@ export const SubmitButton = styled.TouchableOpacity`
 
 export const ButtonText = styled.Text`
 	font-size: 18px;
-	font-family: 'Roboto-Bold';
+	font-family: 'OpenSans-Bold';
 	color: #f5f5f5;
 	text-transform: uppercase;
 `
@@ -63,11 +63,11 @@ export const CreateAccountText = styled.Text`
 	margin-left: 5px;
 	color: #3b9054;
 	font-size: 18px;
-	font-family: 'Roboto-Medium';
+	font-family: 'OpenSans-Medium';
 `
 
 export const CreateAccountMessage = styled.Text`
 	color: #000000;
 	font-size: 15px;
-	font-family: 'Roboto-Regular';
+	font-family: 'OpenSans-Regular';
 `
