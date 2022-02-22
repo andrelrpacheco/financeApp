@@ -22,7 +22,7 @@ export const ButtonContainer = styled.View`
 export const ButtonRegisterSpending = styled.TouchableOpacity`
 	justify-content: center;
 	align-items: center;
-	background-color: #3b9054;
+	background-color: #64c0c7;
 	width: 90%;
 	height: 45px;
 	border-radius: 8px;

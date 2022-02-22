@@ -36,7 +36,7 @@ export const SubmitButton = styled.TouchableOpacity`
 	justify-content: center;
 	width: 90%;
 	height: 45px;
-	background-color: #3b9054;
+	background-color: #64c0c7;
 	border-radius: 8px;
 	margin-top: 12px;
 `
@@ -61,9 +61,9 @@ export const CreateAccountButton = styled.TouchableOpacity`
 
 export const CreateAccountText = styled.Text`
 	margin-left: 5px;
-	color: #3b9054;
+	color: #64c0c7;
 	font-size: 18px;
-	font-family: 'OpenSans-Medium';
+	font-family: 'OpenSans-Bold';
 `
 
 export const CreateAccountMessage = styled.Text`

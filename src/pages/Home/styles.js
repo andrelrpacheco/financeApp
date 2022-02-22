@@ -26,7 +26,7 @@ export const Title = styled.Text`
 	font-size: 16px;
 	font-family: 'OpenSans-Bold';
 	margin: 0 0 8px 15px;
-	color: #3b9054;
+	color: #64c0c7;
 `
 export const LastMoveList = styled.FlatList`
 	padding-top: 15px;

@@ -13,7 +13,7 @@ function AppStack() {
 				drawerStyle: { backgroundColor: '#EAEAEA' },
 				headerShown: false,
 				drawerActiveTintColor: '#FFFFFF',
-				drawerActiveBackgroundColor: '#40916c',
+				drawerActiveBackgroundColor: '#64c0c7',
 				drawerInactiveTintColor: '#000000',
 				drawerLabelStyle: {
 					fontSize: 18,

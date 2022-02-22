@@ -16,7 +16,7 @@ export const Type = styled.View`
 export const IconView = styled.View`
 	flex-direction: row;
 	background-color: ${props =>
-		props.type === 'receita' ? '#3b9054' : '#c62c36'};
+		props.type === 'receita' ? '#64c0c7' : '#c62c36'};
 	padding: 3px 5px;
 	border-radius: 6px;
 `
