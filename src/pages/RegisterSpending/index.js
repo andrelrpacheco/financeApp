@@ -86,6 +86,14 @@ export default function RegisterSpending() {
 		navigation.navigate('Home')
 	}
 
+	function textInputIsNumber(text) {
+		if (!isNaN(text)) {
+			setDataValue(text)
+			return
+		}
+		setDataValue('')
+	}
+
 	return (
 		<TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
 			<Background>
@@ -94,11 +102,10 @@ export default function RegisterSpending() {
 					<TitleRegister>Registre receita ou despesa</TitleRegister>
 					<Input
 						placeholder="Valor em reais"
-						keyboardType="numeric"
 						returnKeyType="next"
 						onSubmitEditing={() => Keyboard.dismiss()}
 						value={dataValue}
-						onChangeText={text => setDataValue(text)}
+						onChangeText={textInputIsNumber}
 					/>
 
 					<PickerComponent onChange={setDataType} type={dataType} />

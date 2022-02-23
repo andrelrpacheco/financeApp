@@ -119,7 +119,7 @@ export default function Home() {
 			<Header />
 			<Container>
 				<UserName>Olá, {user && user.nome}</UserName>
-				<Balance>R$ {balance}</Balance>
+				<Balance>R$ {balance.toFixed(2)}</Balance>
 			</Container>
 
 			<Title>Ultimas movimentações</Title>
