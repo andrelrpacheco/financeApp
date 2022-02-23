@@ -9,6 +9,7 @@ export const AuthContext = createContext({})
 function AuthProvider({ children }) {
 	const [user, setUser] = useState(null)
 	const [loading, setLoading] = useState(true)
+	const [loadingAuth, setLoadingAuth] = useState(false)
 
 	useEffect(() => {
 		getStorageUser()
@@ -35,6 +36,7 @@ function AuthProvider({ children }) {
 	// Logando usuário
 	const signIn = async (email, password) => {
 		try {
+			setLoadingAuth(true)
 			const responseLogged = await firebase
 				.auth()
 				.signInWithEmailAndPassword(email, password)
@@ -54,14 +56,17 @@ function AuthProvider({ children }) {
 			setUser(data)
 			showToast('Usuário logado com sucesso!', ToastAndroid.SHORT)
 			storageUser(data)
+			setLoadingAuth(false)
 		} catch (error) {
 			showToast('Email ou senha inválido!', ToastAndroid.LONG)
+			setLoadingAuth(false)
 		}
 	}
 
 	// Cadastrar usuário na base do firebase
 	const signUp = async (email, password, nome) => {
 		try {
+			setLoadingAuth(true)
 			const responseAuth = await firebase
 				.auth()
 				.createUserWithEmailAndPassword(email, password)
@@ -81,8 +86,10 @@ function AuthProvider({ children }) {
 			setUser(data)
 			storageUser(data)
 			showToast('Usuário criado com sucesso!', ToastAndroid.SHORT)
+			setLoadingAuth(false)
 		} catch (error) {
 			showToast('Verifique os dados e tente novamente!', ToastAndroid.LONG)
+			setLoadingAuth(false)
 		}
 	}
 
@@ -102,7 +109,15 @@ function AuthProvider({ children }) {
 
 	return (
 		<AuthContext.Provider
-			value={{ isLogged: !!user, user, loading, signUp, signIn, signOut }}>
+			value={{
+				isLogged: !!user,
+				user,
+				loading,
+				loadingAuth,
+				signUp,
+				signIn,
+				signOut,
+			}}>
 			{children}
 		</AuthContext.Provider>
 	)

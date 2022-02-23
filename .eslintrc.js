@@ -31,5 +31,6 @@ module.exports = {
 			'error',
 			{ functions: false, classes: false, variables: false },
 		],
+		'no-unused-expressions': ['error', { allowTernary: true }],
 	},
 }

@@ -1,6 +1,6 @@
 import styled from 'styled-components/native'
 
-export const Background = styled.View`
+export const Background = styled.SafeAreaView`
 	flex: 1;
 	background-color: rgba(234, 234, 234, 0.8);
 `
@@ -30,4 +30,10 @@ export const SubmitText = styled.Text`
 	font-size: 18px;
 	font-family: 'OpenSans-Bold';
 	text-transform: uppercase;
+`
+export const TitleRegister = styled.Text`
+	font-size: 18px;
+	font-family: 'OpenSans-Medium';
+	margin: 15px 0 20px 0;
+	color: #000000;
 `
