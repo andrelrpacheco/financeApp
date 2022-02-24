@@ -1,7 +1,9 @@
 import React, { useContext, useState, useEffect } from 'react'
-import { Alert } from 'react-native'
+import { Alert, Platform, TouchableOpacity } from 'react-native'
+import Icon from 'react-native-vector-icons/MaterialIcons'
 import moment from 'moment'
 import Header from '../../components/Header'
+import DatePicker from '../../components/DatePicker'
 import ListHistory from '../../components/ListHistory'
 import firebase from '../../services/FirebaseConnection'
 import { AuthContext } from '../../contexts/authContext'
@@ -10,6 +12,7 @@ import {
 	Container,
 	UserName,
 	Balance,
+	ContentIcon,
 	Title,
 	LastMoveList,
 } from './styles'
@@ -17,15 +20,18 @@ import {
 export default function Home() {
 	const [listItems, setListItems] = useState([])
 	const [balance, setBalance] = useState(0)
+	const [newDate, setNewDate] = useState(new Date())
+	const [showDatePicker, setShowDatePicker] = useState(false)
+
 	const { user } = useContext(AuthContext)
+	const uid = user && user.uid
 
 	useEffect(() => {
 		getListIncomeAndExpense()
 		getBalanceList()
-	}, [])
+	}, [newDate])
 
 	const getBalanceList = async () => {
-		const uid = user && user.uid
 		await firebase
 			.database()
 			.ref('users')
@@ -36,24 +42,25 @@ export default function Home() {
 	}
 
 	const getListIncomeAndExpense = async () => {
-		const uid = user && user.uid
 		await firebase
 			.database()
 			.ref('history')
 			.child(uid)
+			.orderByChild('date')
+			.equalTo(moment(newDate, 'YYYY/MM/DD').format('DD/MM/YYYY'))
 			.limitToLast(10)
 			.on('value', response => {
 				setListItems([])
 
 				response.forEach(childItem => {
-					const data = {
+					const dataChild = {
 						key: childItem.key,
 						typeItem: childItem.val().typeItem,
 						valueItem: childItem.val().valueItem,
 						date: childItem.val().date,
 					}
 
-					setListItems(newListItem => [...newListItem, data])
+					setListItems(newListItem => [...newListItem, dataChild])
 				})
 			})
 	}
@@ -93,7 +100,7 @@ export default function Home() {
 		await firebase
 			.database()
 			.ref('history')
-			.child(user.uid)
+			.child(uid)
 			.child(data.key)
 			.remove()
 			.then(async () => {
@@ -105,13 +112,27 @@ export default function Home() {
 				await firebase
 					.database()
 					.ref('users')
-					.child(user.uid)
+					.child(uid)
 					.child('saldo')
 					.set(saldoAtual)
 			})
 			.catch(error => {
 				console.log(error)
 			})
+	}
+
+	const handleShowPicker = () => {
+		setShowDatePicker(true)
+	}
+
+	const handleClose = () => {
+		setShowDatePicker(false)
+	}
+
+	const onChangeDatePicker = date => {
+		setShowDatePicker(Platform.OS === 'ios')
+		setNewDate(date)
+		console.log(date)
 	}
 
 	return (
@@ -122,7 +143,12 @@ export default function Home() {
 				<Balance>R$ {balance.toFixed(2)}</Balance>
 			</Container>
 
-			<Title>Ultimas movimentações</Title>
+			<ContentIcon>
+				<TouchableOpacity onPress={handleShowPicker}>
+					<Icon name="event" color="#000" size={30} />
+				</TouchableOpacity>
+				<Title>Ultimas movimentações</Title>
+			</ContentIcon>
 
 			<LastMoveList
 				showsVerticalScrollIndicator={false}
@@ -132,6 +158,14 @@ export default function Home() {
 					<ListHistory data={item} deleteItem={handleDelete} />
 				)}
 			/>
+
+			{showDatePicker && (
+				<DatePicker
+					onClose={handleClose}
+					date={newDate}
+					onChange={onChangeDatePicker}
+				/>
+			)}
 		</Background>
 	)
 }

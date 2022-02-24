@@ -8,6 +8,11 @@ export const Background = styled.SafeAreaView`
 export const Container = styled.View`
 	margin: 0 0 15px 15px;
 `
+export const ContentIcon = styled.View`
+	flex-direction: row;
+	margin-left: 15px;
+	align-items: baseline;
+`
 
 export const UserName = styled.Text`
 	font-size: 20px;
@@ -25,7 +30,7 @@ export const Balance = styled.Text`
 export const Title = styled.Text`
 	font-size: 15px;
 	font-family: 'OpenSans-Bold';
-	margin: 0 0 8px 15px;
+	margin: 0 0 8px 5px;
 	color: #000000;
 `
 export const LastMoveList = styled.FlatList`
