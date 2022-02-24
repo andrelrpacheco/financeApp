@@ -6,27 +6,30 @@ import Header from '../../components/Header'
 import {
 	Container,
 	UserNameView,
+	UserEmailView,
 	UserName,
 	ButtonContainer,
 	ButtonRegisterSpending,
 	TextRegisterSpending,
-	ButtonLogout,
-	TextLogout,
+	Label,
 } from './styles'
 
 export default function Profile() {
 	const navigation = useNavigation()
-	const { user, signOut } = useContext(AuthContext)
+	const { user } = useContext(AuthContext)
 
 	return (
 		<Container>
 			<Header />
 			<UserNameView>
-				<UserName>Olá, {user && user.nome}</UserName>
-				<ButtonLogout onPress={() => signOut()}>
-					<TextLogout>Sair</TextLogout>
-				</ButtonLogout>
+				<Label>Nome: </Label>
+				<UserName>{user && user.nome}</UserName>
 			</UserNameView>
+
+			<UserEmailView>
+				<Label>E-mail: </Label>
+				<UserName>{user && user.email}</UserName>
+			</UserEmailView>
 
 			<ButtonContainer>
 				<ButtonRegisterSpending

@@ -5,15 +5,21 @@ export const Container = styled.View`
 	background: rgba(234, 234, 234, 0.8);
 `
 export const UserNameView = styled.View`
-	align-items: flex-start;
-	margin: 0 0 20px 10px;
+	flex-direction: row;
+	align-items: center;
+	margin-left: 15px;
+`
+export const UserEmailView = styled.View`
+	flex-direction: row;
+	align-items: center;
 	border-bottom-width: 1px;
 	border-color: #d3d3d3;
 `
 
 export const UserName = styled.Text`
-	font-size: 26px;
+	font-size: 20px;
 	color: #000000;
+	font-family: 'OpenSans-Regular';
 `
 export const ButtonContainer = styled.View`
 	align-items: center;
@@ -36,12 +42,8 @@ export const TextRegisterSpending = styled.Text`
 	text-transform: uppercase;
 `
 
-export const ButtonLogout = styled.TouchableOpacity`
-	margin: 5px 0 5px 0;
-`
-
-export const TextLogout = styled.Text`
-	font-size: 18px;
+export const Label = styled.Text`
+	font-size: 16px;
 	font-family: 'OpenSans-Bold';
-	color: #ff0000;
+	color: #000;
 `
