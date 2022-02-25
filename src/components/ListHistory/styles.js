@@ -16,14 +16,14 @@ export const Type = styled.View`
 export const IconView = styled.View`
 	flex-direction: row;
 	background-color: ${props =>
-		props.type === 'receita' ? '#64c0c7' : '#c62c36'};
+		props.type === 'receita' ? '#008000' : '#bf0010'};
 	padding: 3px 5px;
 	border-radius: 6px;
 `
 
 export const TypeText = styled.Text`
 	color: #fff;
-	font-size: 16px;
+	font-size: 17px;
 	font-family: 'OpenSans-Medium';
 `
 

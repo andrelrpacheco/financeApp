@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react'
 import { Alert, Platform, TouchableOpacity } from 'react-native'
-import Icon from 'react-native-vector-icons/MaterialIcons'
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import moment from 'moment'
 import Header from '../../components/Header'
 import DatePicker from '../../components/DatePicker'
@@ -145,7 +145,7 @@ export default function Home() {
 
 			<ContentIcon>
 				<TouchableOpacity onPress={handleShowPicker}>
-					<Icon name="event" color="#000" size={30} />
+					<Icon name="calendar-month-outline" color="#000000" size={30} />
 				</TouchableOpacity>
 				<Title>Ultimas movimentações</Title>
 			</ContentIcon>

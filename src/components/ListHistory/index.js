@@ -10,7 +10,7 @@ export default function ListHistory({ data, deleteItem }) {
 				<Type>
 					<IconView type={data.typeItem}>
 						<IconFeather
-							name={data.tipo === 'receita' ? 'arrow-up' : 'arrow-down'}
+							name={data.typeItem === 'receita' ? 'arrow-up' : 'arrow-down'}
 							color="#ffffff"
 							size={18}
 						/>

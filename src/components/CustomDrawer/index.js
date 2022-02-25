@@ -43,7 +43,7 @@ export default function CustomDrawer(props) {
 				labelStyle={{
 					fontSize: 20,
 					fontWeight: 'bold',
-					color: '#ff0000',
+					color: '#bf0010',
 					marginTop: 20,
 				}}
 				onPress={() => signOut()}
