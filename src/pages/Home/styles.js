@@ -39,10 +39,3 @@ export const LastMoveList = styled.FlatList`
 	border-top-left-radius: 15px;
 	border-top-right-radius: 15px;
 `
-
-export const NoTransactions = styled.Text`
-	text-align: center;
-	font-size: 15px;
-	margin: 50px 0 0 15px;
-	font-family: 'OpenSans-Medium';
-`

@@ -27,8 +27,8 @@ export default function Home() {
 	const uid = user && user.uid
 
 	useEffect(() => {
-		getListIncomeAndExpense()
 		getBalanceList()
+		getListIncomeAndExpense()
 	}, [newDate])
 
 	const getBalanceList = async () => {
@@ -150,14 +150,16 @@ export default function Home() {
 				<Title>Ultimas movimentações</Title>
 			</ContentIcon>
 
-			<LastMoveList
-				showsVerticalScrollIndicator={false}
-				keyExtractor={item => item.key}
-				data={listItems}
-				renderItem={({ item }) => (
-					<ListHistory data={item} deleteItem={handleDelete} />
-				)}
-			/>
+			{listItems.length > 0 ? (
+				<LastMoveList
+					showsVerticalScrollIndicator={false}
+					keyExtractor={item => item.key}
+					data={listItems}
+					renderItem={({ item }) => (
+						<ListHistory data={item} deleteItem={handleDelete} />
+					)}
+				/>
+			) : null}
 
 			{showDatePicker && (
 				<DatePicker

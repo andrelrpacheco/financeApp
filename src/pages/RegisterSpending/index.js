@@ -34,8 +34,10 @@ export default function RegisterSpending() {
 		}
 
 		Alert.alert(
-			'Confirme seu dados',
-			`${dataType} no valor de R$${parseFloat(dataValue)}`,
+			'Confirme os dados',
+			`Você vai registrar uma ${dataType} no valor de R$${parseFloat(
+				dataValue
+			)}`,
 			[
 				{
 					text: 'Cancelar',

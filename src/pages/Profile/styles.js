@@ -12,17 +12,18 @@ export const UserNameView = styled.View`
 export const UserEmailView = styled.View`
 	flex-direction: row;
 	align-items: center;
-	border-bottom-width: 1px;
-	border-color: #d3d3d3;
+	margin: 0 0 15px 15px;
 `
 
 export const UserName = styled.Text`
-	font-size: 20px;
+	font-size: 18px;
 	color: #000000;
 	font-family: 'OpenSans-Regular';
 `
 export const ButtonContainer = styled.View`
 	align-items: center;
+	border-top-width: 1px;
+	border-color: #d3d3d3;
 `
 
 export const ButtonRegisterSpending = styled.TouchableOpacity`
@@ -32,7 +33,7 @@ export const ButtonRegisterSpending = styled.TouchableOpacity`
 	width: 90%;
 	height: 45px;
 	border-radius: 8px;
-	margin-top: 35px;
+	margin-top: 50px;
 `
 
 export const TextRegisterSpending = styled.Text`
